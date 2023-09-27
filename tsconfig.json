@@ -1,0 +1,25 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "paths": {
+      "@badeball/cypress-cucumber-preprocessor/*": ["./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"]
+    },
+    "outDir": "dist",
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "target": "ES2017",
+    "module": "nodenext",
+    "types": ["node", "cypress"],
+    "lib": ["dom", "ESNext"]
+  },
+  "include": [
+    "**/**/**/*.ts",
+   
+  ]
+ 
+}
