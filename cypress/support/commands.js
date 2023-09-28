@@ -23,3 +23,30 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import bcrypt from "bcryptjs";
+
+let username
+  let password 
+
+const passwordHash = bcrypt.hashSync("s3cret", 10);
+Cypress.Commands.add("createSignUpUser", () => {
+  const faker = require("@faker-js/faker");
+
+  cy.writeFile("cypress/fixtures/user.json", {
+    hits: Cypress._.times(1, () => {
+      return {
+        username: `${faker.internet.userName()}`,
+        password: `${passwordHash}`,
+      };
+    }),
+  });
+});
+
+Cypress.Commands.add("completeSignUp", () => {
+  username = createSignUpUser().username;
+  password = createSignUpUser().password;
+  
+  cy.get("#sign-username").type(`${faker.internet.userName()}`);
+  cy.get("#sign-password").type(`${passwordHash}`);
+
+});
