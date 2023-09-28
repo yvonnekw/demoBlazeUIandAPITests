@@ -1,8 +1,8 @@
 Feature: sign up feature
 
-    Background:  
+    Background:
         Given Sam is on the sauce Demo login page
 
-    Scenario: login with valid credentials
-    When Sam enters valid details
-    Then he should succesfully be registered
+    Scenario: Sam sign-up
+        When Sam enters valid details for signing-up
+        Then he should succesfully be registered
