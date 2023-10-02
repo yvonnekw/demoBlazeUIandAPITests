@@ -8,3 +8,4 @@ dist/
 log/
 npm_install_debug.log
 results/
+cypress/.DS_Store
