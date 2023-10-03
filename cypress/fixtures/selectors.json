@@ -1,0 +1,11 @@
+{
+  "logInLink": "#login2",
+  "usernameField": "#loginusername",
+  "passwordField": "#loginpassword",
+  "loginButton": "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary",
+  "nameOfUserText": "#nameofuser",
+  "signUpLink": "#signin2",
+  "signUpUsernameField": "#sign-username",
+  "signUpPasswordField":"#sign-password",
+  "signUpButton":"#signInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
+}

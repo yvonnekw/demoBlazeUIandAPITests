@@ -15,6 +15,21 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
+import './commonCommands/common.actions'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+declare global {
+    namespace Cypress {
+      interface Chainable {
+        clickElement(element: string): Chainable<void>
+        typeText(textField, text: string): Chainable<void>
+        handleSeccessAlert(stub:void, message: string): Chainable<void>
+        selectValue(element, value: string): Chainable<void>
+        displayLinkText(linkText, text: string): Chainable<void>
+       
+      }
+    }
+  }

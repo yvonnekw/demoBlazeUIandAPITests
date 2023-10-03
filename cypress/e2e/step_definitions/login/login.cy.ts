@@ -11,12 +11,16 @@ Given("Sam is on the sauce Demo login page", () => {
 });
 
 When('Sam enters valid credentials {string}, {string}', (username: string, password: string) => {
-  cy.get("#login2").click();
-  cy.get("#loginusername").type(username);
-  cy.get("#loginpassword").type(password);
-  cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click()
+  cy.fixture("selectors").then(($el) => {
+  cy.clickElement($el.logInLink)
+  cy.typeText($el.usernameField, username)
+  cy.typeText($el.passwordField, password)
+  cy.clickElement($el.loginButton)
+  })
 
-})
-Then('he should succesfully login', () => {
-  console.log("coming up")
+});
+Then('he should succesfully login {string}', (username: string) => {
+  cy.fixture("selectors").then(($el) => {
+  cy.displayLinkText($el.nameOfUserText, username)
+  })
 });
