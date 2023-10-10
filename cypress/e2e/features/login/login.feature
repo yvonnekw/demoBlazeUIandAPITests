@@ -6,3 +6,7 @@ Feature: login feature
     Scenario: login with valid credentials
         When Sam enters valid credentials "user@ent.com", "secret2"
         Then he should succesfully login "user@ent.com"
+
+    Scenario: should get config data
+        When Sam enters valid credentials "user@ent.com", "secret2"
+        Then he should see config data

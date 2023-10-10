@@ -4,6 +4,7 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 import { faker } from '@faker-js/faker';
 
+const tokenValue = 'localToken';
 
 When(/^Sam enters valid details for signing-up$/, () => {
   cy.fixture("selectors").then(($el) => {
@@ -49,4 +50,11 @@ Then(/^he should see this user already exist error alert$/, () => {
   });
 });
 
+When(/^Sam sets the stored local storage token$/, () => {
+	cy.setLocalStorage('token', tokenValue)
+});
 
+Then(/^he gets the local storage token$/, () => {
+  cy.getLocalStorage('token').should('eq', tokenValue)
+
+});
