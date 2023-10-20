@@ -13,7 +13,7 @@ beforeEach(() => {
 })
 
 Given("Sam is on the sauce Demo login page", () => {
-  cy.visit("https://www.demoblaze.com/prod.html?idp_=1#");
+  cy.visit("/prod.html?idp_=1#");
 });
 
 When('Sam enters valid credentials {string}, {string}', (username: string, password: string) => {
