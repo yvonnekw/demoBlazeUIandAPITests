@@ -9,6 +9,10 @@ Cypress.Commands.add('displayLinkText', (linkText, text) => {
     expect(cy.get(linkText).should('have.text', text))
 })
 
+Cypress.Commands.add('button', (button) => {
+    cy.get(button).should('be.visible')
+})
+
 Cypress.Commands.add('clickElement', (element) => {
     cy.get(element).should('exist').click()
 })

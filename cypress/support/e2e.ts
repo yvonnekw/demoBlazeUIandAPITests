@@ -29,6 +29,7 @@ declare global {
         handleSeccessAlert(stub:void, message: string): Chainable<void>
         selectValue(element, value: string): Chainable<void>
         displayLinkText(linkText, text: string): Chainable<void>
+        button(text: string): Chainable<void>
         setLocalStorage(key, value: string): Chainable<void>
         getLocalStorage(key: string): Chainable<void>
         type(originalFn, element:any, text:any, options:any): Chainable<void>

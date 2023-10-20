@@ -5,7 +5,7 @@ Feature: login feature
 
     Scenario: login with valid credentials
         When Sam enters valid credentials "user@ent.com", "secret2"
-        Then he should succesfully login "Welcome user@e"
+        Then he should succesfully login with the "Log out" button displayed
 
     Scenario: should get config data
         When Sam enters valid credentials "user@ent.com", "secret2"
