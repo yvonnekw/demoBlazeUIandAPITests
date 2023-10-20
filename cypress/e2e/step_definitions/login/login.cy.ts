@@ -6,6 +6,9 @@ import {
 } from "@badeball/cypress-cucumber-preprocessor";
 
 beforeEach(() => {
+  cy.intercept('GET' ,'/config.json', () =>{
+  
+  }).as('login')
   cy.fixture("selectors").then(function (data) {
     this.data = data
     cy.log('THIS: ', this.data)
