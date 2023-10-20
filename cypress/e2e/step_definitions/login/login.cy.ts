@@ -13,7 +13,7 @@ beforeEach(() => {
 })
 
 Given("Sam is on the sauce Demo login page", () => {
-  cy.visit("https://www.demoblaze.com/prod.html?idp_=1#");
+  cy.visit("/prod.html?idp_=1#");
 });
 
 When('Sam enters valid credentials {string}, {string}', (username: string, password: string) => {
@@ -25,9 +25,10 @@ When('Sam enters valid credentials {string}, {string}', (username: string, passw
   })
 
 });
-Then('he should succesfully login {string}', (username: string) => {
+
+Then(/^he should succesfully login with the "([^"]*)" button displayed$/, () => {
   cy.fixture("selectors").then(($el) => {
-    cy.displayLinkText($el.nameOfUserText, username)
+    expect(cy.button($el.logOutButton).should('be.visible'))
   })
 });
 

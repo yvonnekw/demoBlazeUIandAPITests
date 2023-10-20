@@ -4,6 +4,7 @@
   "passwordField": "#loginpassword",
   "loginButton": "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary",
   "nameOfUserText": "#nameofuser",
+  "logOutButton": "#logout2",
   "signUpLink": "#signin2",
   "signUpUsernameField": "#sign-username",
   "signUpPasswordField":"#sign-password",
