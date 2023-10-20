@@ -6,7 +6,7 @@ Cypress.Commands.add('typeText', (textField, text) => {
 })
 
 Cypress.Commands.add('displayLinkText', (linkText, text) => {
-    expect(cy.get(linkText).should('contain.text', text))
+    expect(cy.get(linkText).should('have.text', text))
 })
 
 Cypress.Commands.add('clickElement', (element) => {
